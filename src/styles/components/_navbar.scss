@@ -1,0 +1,144 @@
+// Disable some lint rules for necessary overriding Bootstrap styling
+// stylelint-disable selector-max-specificity, max-nesting-depth, selector-max-compound-selectors
+
+$sidebar-padding-horizontal: setting(spacing, element);
+
+/*
+ * Reset
+ */
+.navbar-sidebar {
+    .navbar-nav,
+    .navbar-nav > li,
+    .navbar-left,
+    .navbar-right,
+    .navbar-header {
+        float: none;
+    }
+
+    .navbar-right .dropdown-menu {
+        left: 0;
+        right: auto;
+    }
+
+    .navbar-collapse .navbar-nav.navbar-right:last-child {
+        margin-right: 0;
+    }
+}
+
+/**
+ * [1] Magic Bootstrap height.
+ */
+.navbar .divider {
+    height: 1px; /* [1] */
+    overflow: hidden;
+
+    background-color: setting(color, sidebar-divider);
+}
+
+/*
+ * Theming
+ *
+ * Magic but gives the navbar the space so the app looks more balanced.
+ */
+.navbar-sidebar {
+    min-width: 12.5vw; /* [1] */
+
+    border-right: setting(border, sidebar);
+    z-index: setting(z-index, sidebar);
+
+    .navbar-header {
+        padding-top: setting(spacing, inline);
+        padding-bottom: setting(spacing, inline);
+    }
+
+    .navbar-nav {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+
+        padding-top: setting(spacing, element-narrow);
+    }
+
+    .navbar-nav > li > a {
+        color: setting(color, sidebar-color);
+        font-weight: setting(font-weight, normal);
+        padding-left: $sidebar-padding-horizontal;
+        padding-right: $sidebar-padding-horizontal;
+        text-decoration: none;
+    }
+
+    .navbar-nav .open > a,
+    .navbar-nav .open > a:focus,
+    .navbar-nav .open > a:hover,
+    .navbar-nav > li > a:hover,
+    .navbar-nav > li > a:active,
+    .navbar-nav > li > a:focus,
+    .navbar-nav > .active > a {
+        background-color: transparent;
+        color: setting(color, sidebar-hover);
+    }
+
+    .navbar-nav .open > a,
+    .navbar-nav .open > a:focus,
+    .navbar-nav .open > a:hover,
+    .dropdown-menu {
+        background-color: setting(color, app-background);
+    }
+}
+
+
+.navbar-sidebar,
+.navbar-default {
+    .dropdown-toggle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .dropup .dropdown-menu {
+        margin-bottom: 0;
+    }
+}
+
+.navbar-default {
+    background-color: setting(color, white);
+
+    .navbar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        /**
+         * Unset the default Bootstrap navbar clearfix
+         */
+        &::before,
+        &::after {
+            content: none;
+        }
+    }
+
+    .dropup .caret {
+        transform: rotate(180deg);
+    }
+
+    /**
+     * Mimic the default Bootstrap container spacing.
+     */
+    .navbar-header-actions {
+        margin-right: ($b / 2);
+    }
+
+    .divider {
+        background-color: setting(color, gray-light);
+    }
+}
+
+.navbar-brand {
+    padding: 15px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+// stylelint-enable selector-max-specificity, max-nesting-depth, selector-max-compound-selectors

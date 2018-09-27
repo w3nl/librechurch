@@ -1,0 +1,31 @@
+// Only display content to screen readers
+//
+// See: http://a11yproject.com/posts/how-to-hide-content/
+// snippet fron https://github.com/twbs/bootstrap/blob/v4-dev/scss/mixins/_screen-reader.scss
+//
+@mixin sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+@mixin clearfix($placement: after) {
+
+    $possible: before after;
+
+    @if index($possible, $placement) {
+        &:#{$placement} {
+            content: '';
+            display: table;
+            clear: both;
+        }
+    } @else {
+        @warn 'D’oh! ‘#{$placement}’ is not a valid value for the clearfix. Only after or before are valid.';
+    }
+
+}

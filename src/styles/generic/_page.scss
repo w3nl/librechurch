@@ -1,0 +1,24 @@
+html {
+    @include font;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    min-height: 100%;
+
+    text-size-adjust: 100%;
+
+    height: 100%;
+}
+
+p {
+    margin-bottom: setting(spacing, element);
+}
+
+.p--flush {
+    margin-bottom: 0;
+}
+
+.small {
+    @include inuit-font-size(setting(font-size, smaller));
+}

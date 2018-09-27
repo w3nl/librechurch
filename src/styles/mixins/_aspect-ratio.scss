@@ -1,0 +1,23 @@
+@mixin aspect-ratio {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+    }
+}
+
+@mixin aspect-ratio-padding ($width, $height) {
+    &::before {
+        padding-bottom: percentage($height / $width);
+    }
+}
+
+@mixin aspect-ratio-from-height ($width, $height, $new-height) {
+    width: calculate-width-from-height($width, $height, $new-height);
+    height: $new-height;
+}

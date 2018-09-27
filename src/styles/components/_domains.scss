@@ -1,0 +1,25 @@
+.domains {
+    border-top: 1px solid setting(color, gray-light);
+    border-bottom: 1px solid setting(color, gray-light);
+
+    margin-bottom: setting(spacing, element);
+
+    font-weight: setting(font-weight, bold);
+    color: setting(color, black-light);
+}
+
+.domains__title {
+    margin-right: setting(spacing, element-narrow);
+}
+
+.domains__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: setting(spacing, element-narrow) 0;
+}
+
+.domains__item:not(:last-child) {
+    border-bottom: 1px solid setting(color, gray-light);
+}

@@ -1,0 +1,51 @@
+$meter-height: 7px;
+
+.wizard {
+    color: setting(color, black-light);
+}
+
+.wizard__meter {
+    height: $meter-height;
+    background-color: setting(color, meter-gray);
+    display: block;
+}
+
+.wizard__meter.is-active {
+    background-color: setting(color, meter-blue);
+}
+
+.wizard__title {
+    font-weight: setting(font-weight, normal);
+    color: setting(color, meter-gray-light);
+    text-align: left;
+    display: block;
+    margin-bottom: setting(spacing, element-narrow);
+}
+
+.wizard__item.is-active {
+    > .wizard__title {
+        font-weight: setting(font-weight, bold);
+        color: setting(color, black-light);
+    }
+}
+
+.wizard__footer {
+    display: flex;
+    flex-direction: column;
+
+    border: setting(border, wizard);
+    padding: setting(spacing, element-narrow);
+    color: setting(color, black-light);
+
+    @include media-query(desk) {
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+
+        padding: setting(spacing, element);
+    }
+}
+
+.wizard__item {
+    padding-left: setting(spacing, inline);
+}

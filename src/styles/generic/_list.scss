@@ -1,0 +1,21 @@
+.list {
+    margin-bottom: setting(spacing, element);
+}
+
+.list--inside {
+    margin-left: 1em;
+}
+
+.list--unstyled {
+    padding: 0;
+
+    > li {
+        list-style: none;
+    }
+}
+
+.list--ib {
+    > li {
+        display: inline-block;
+    }
+}

@@ -1,0 +1,19 @@
+.btn {
+    word-break: break-word;
+    padding: setting(spacing, button-tb) setting(spacing, button-lr);
+    text-transform: uppercase;
+
+    border-radius: setting(border-radius, button);
+    border: 0;
+
+    font-size: setting(font-size, button);
+    font-weight: setting(font-weight, button);
+    line-height: setting(line-height, button);
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.is-active {
+        outline: 0;
+    }
+}

@@ -1,0 +1,27 @@
+//
+// Container
+//
+
+$w2w-container-max-width: setting(container-max-width);
+$w2w-container-gutter: $inuit-base-spacing-unit !default;
+
+$w2w-enable-container--flush-palm: false !default;
+
+.container {
+    margin: 0 auto;
+    padding: 0 $w2w-container-gutter;
+    max-width: $w2w-container-max-width;
+}
+
+.container-fluid {
+    margin: 0 auto;
+    padding: 0 ($w2w-container-gutter / 2);
+}
+
+@if ($w2w-enable-container--flush-palm == true) {
+    .container--flush-palm {
+        @include media-query(palm) {
+            padding: 0;
+        }
+    }
+}

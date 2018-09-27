@@ -1,0 +1,79 @@
+//
+// Markup:
+// <section class="section {{modifier_class}}">
+//     <h1>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</h1>
+//     <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus.</p>
+// </section>
+//
+// .section--filled - Has a background color
+// .section--narrow - Tighter spacings
+// .section--flush  - Remove padding
+// .section--outer  - For filled elements so there's spacing for the next element
+//
+
+/*
+    Disable some lint rules until this file is refactored
+*/
+/* stylelint-disable max-nesting-depth, rule-nested-empty-line-before */
+
+$design-spacing: setting(spacing, section) !default;
+$element-spacing: setting(spacing, element) !default;
+
+$section-spacing: $design-spacing;
+$section-spacing-inner: $design-spacing - $element-spacing;
+
+$section-spacing-narrow: setting(spacing, section-narrow) !default;
+$section-spacing-inner-narrow: $section-spacing-narrow - $element-spacing !default;
+
+$w2w-enable-section--filled: false !default;
+$w2w-enable-section--narrow: false !default;
+$w2w-enable-section--flush: false !default;
+$w2w-enable-section--outer: false !default;
+
+.section {
+    padding-bottom: $section-spacing-inner;
+
+    @if ($w2w-enable-section--filled == true) {
+        &--filled {
+            padding-top: $section-spacing;
+
+            @if ($w2w-enable-section--narrow == true) {
+                &.section--narrow {
+                    padding-top: $section-spacing-narrow;
+                }
+            }
+        }
+    }
+
+    @if ($w2w-enable-section--narrow == true) {
+        &--narrow {
+            padding-bottom: $section-spacing-inner-narrow;
+        }
+    }
+
+    @if ($w2w-enable-section--flush == true) {
+        &--flush {
+            /*
+                Never ever have vertical padding
+            */
+            // stylelint-disable declaration-no-important
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            // stylelint-enable declaration-no-important
+        }
+    }
+
+    @if ($w2w-enable-section--flush == true) {
+        &--outer {
+            margin-bottom: $section-spacing;
+
+            @if ($w2w-enable-section--filled == true) {
+                + .section--filled {
+                    margin-top: - setting(spacing, section);
+                }
+            }
+        }
+
+    }
+}
+/* stylelint-enable max-nesting-depth, rule-nested-empty-line-before */

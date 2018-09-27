@@ -1,0 +1,7 @@
+.element {
+    @include element;
+}
+
+.element--narrow {
+    @include element('narrow');
+}

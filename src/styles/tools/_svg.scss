@@ -1,0 +1,32 @@
+/*
+ * Usage:
+ * $svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 10">...</svg>';
+ * background-image: url(inline-svg($svg));
+ */
+@function inline-svg($svg) {
+
+    /*
+     * IE is stricter with data uri's than webkit/blink/gecko, so encode the SVG string
+     * See: https://codepen.io/tigt/post/optimizing-svgs-in-data-uris
+     */
+    $encoded: '';
+    $slice: 2000;
+    $index: 0;
+    $loops: ceil(str-length($svg) / $slice);
+    @for $i from 1 through $loops {
+        $chunk: str-slice($svg, $index, $index + $slice - 1);
+        $chunk: str-replace($chunk, '"', '\'');
+        $chunk: str-replace($chunk, '%', '%25');
+        $chunk: str-replace($chunk, '&', '%26');
+        $chunk: str-replace($chunk, '#', '%23');
+        $chunk: str-replace($chunk, '{', '%7B');
+        $chunk: str-replace($chunk, '}', '%7D');
+        $chunk: str-replace($chunk, '<', '%3C');
+        $chunk: str-replace($chunk, '>', '%3E');
+        $encoded: #{$encoded}#{$chunk};
+
+        $index: $index + $slice;
+    }
+
+    @return  'data:image/svg+xml, #{$encoded}';
+}

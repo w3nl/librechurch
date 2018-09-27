@@ -1,0 +1,87 @@
+/*
+    Disable some lint rules
+    - declaration-no-important: we don't really want mutations on these utility
+*/
+/* stylelint-disable max-nesting-depth, declaration-no-important */
+
+.u-uppercase {
+    text-transform: uppercase;
+}
+
+.u-vertical-align {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.u-text-center {
+    text-align: center;
+}
+
+.u-text-left {
+    text-align: left;
+}
+
+.u-relative {
+    position: relative;
+}
+
+.u-text-breakall {
+    word-break: break-all;
+}
+
+.u-sr-only {
+    @include sr-only;
+}
+
+.u-flex-center {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include media-query(desk) {
+        align-items: flex-end;
+        flex-wrap: nowrap;
+    }
+}
+
+.u-margin-bottom {
+    margin-bottom: setting(spacing, element);
+}
+
+.u-separated-line {
+    background-color: $_gray-light;
+    margin: setting(spacing, element-narrow) 0;
+    height: 1px;
+}
+
+.u-margin-bottom-responsive {
+    margin-bottom: setting(spacing, element);
+
+    @include media-query(desk) {
+        margin-bottom: 0;
+    }
+}
+
+.u-margin-left-flush {
+    margin-left: 0;
+}
+
+// hidden from sighted users but not from AT
+.u-visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
+// set display to none for elements with the hidden attribute (this is for older browsers; < ie11)
+[hidden] {
+    display: none !important;
+}
+
+/* stylelint-enable max-nesting-depth, declaration-no-important */

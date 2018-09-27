@@ -1,0 +1,27 @@
+
+$display-values: (none, inline, block, inline-block);
+
+/*
+    Disable some lint rules
+    - max-nesting-depth: the linter this it's a nested selector but it's not
+    - declaration-no-important: we don't really want mutations on this utility
+*/
+/* stylelint-disable max-nesting-depth, declaration-no-important */
+
+@each $value in $display-values {
+    .u-display--#{$value} {
+        display: $value;
+    }
+
+    @each $breakpoint in $breakpoints {
+        $alias: nth($breakpoint, 1);
+
+        @include media-query($alias) {
+            .u-display--#{$value}-#{$alias} {
+                display: $value !important;
+            }
+        }
+    }
+}
+
+/* stylelint-enable max-nesting-depth, declaration-no-important */

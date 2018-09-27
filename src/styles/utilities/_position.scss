@@ -1,0 +1,7 @@
+$position-values: (static, relative, absolute);
+
+@each $value in $position-values {
+    .u-position-#{$value} {
+        position: $value;
+    }
+}

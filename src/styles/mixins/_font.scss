@@ -1,0 +1,16 @@
+@mixin font($type: default) {
+    @if $type == default {
+
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: setting(font-weight, light);
+
+    } @else if $type == heading {
+
+        font-weight: setting(font-weight, bold);
+
+    } @else {
+
+        @warn 'D’oh! ‘#{$type}’ is not a valid value for the font stack.';
+
+    }
+}

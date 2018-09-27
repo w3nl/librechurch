@@ -1,0 +1,27 @@
+/*
+ * Border settings
+ */
+$settings-border: (
+
+    border: (
+        default: 2px solid $_gray,
+        sidebar: solid 1px rgba(0, 0, 0, 0.05),
+        ghost: 2px solid #14bae9,
+        ghost-orange: 2px solid #f56a19,
+        ghost-gray: 2px solid $_gray,
+        input: 1px solid #9b9b9b,
+        wizard: 1px solid $_gray-light,
+    ),
+
+    box-shadow: (
+        sidebar: 0 0 5px $_gray-lighter
+    ),
+
+    border-radius: (
+        button: 10px,
+        button-nav: 4px,
+        input: 10px,
+        search: 4px
+    ),
+
+);

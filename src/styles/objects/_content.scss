@@ -1,0 +1,18 @@
+%content,
+.content {
+    margin-bottom: setting(spacing, element);
+
+    /*
+        the last element in .content can also be an img, ul or somthing else,
+        use universal selector to mimize risk of missing an element
+    */
+    // stylelint-disable selector-no-universal
+    > *:last-child {
+        margin-bottom: 0;
+    }
+    // stylelint-enable selector-no-universal
+}
+
+.content--flush {
+    margin-bottom: 0;
+}

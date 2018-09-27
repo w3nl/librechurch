@@ -1,0 +1,17 @@
+.embed {
+    @include aspect-ratio;
+    margin-bottom: setting(spacing, element);
+}
+
+.embed--16by9 {
+    @include aspect-ratio-padding(16, 9);
+}
+
+.embed__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+}

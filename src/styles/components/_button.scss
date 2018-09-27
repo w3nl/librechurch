@@ -1,0 +1,195 @@
+$btn-background-start-position: 1px 100px;
+$btn-background-end-position: left -49px;
+$btn-submit-size: 200px;
+$arrow-icon-size: 16px;
+
+.btn--orange {
+    background: setting(color, orange-gradient);
+    color: setting(color, white);
+    background-size: $btn-background-start-position;
+    transition-duration: setting(duration, default);
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.is-active {
+        background-position: $btn-background-end-position;
+    }
+}
+
+.btn--nav {
+    border-radius: setting(border-radius, button-nav);
+}
+
+.btn--blue {
+    background-color: #14bae9;
+    border-color: #14bae9;
+    color: setting(color, white);
+    padding: setting(spacing, element-narrow);
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.is-active {
+        background-color: darken(#14bae9, 10%);
+    }
+}
+
+.btn--domain {
+    padding: setting(spacing, inline) calc(#{setting(spacing, element)} - 2px);
+}
+
+.btn--check {
+    padding: setting(spacing, element-narrow) setting(spacing, element);
+}
+
+.btn--blue-search {
+    height: calc(100% - #{setting(spacing, element-narrow)});
+    width: 100%;
+
+    border-radius: setting(border-radius, search);
+    border-color: setting(color, blue);
+}
+
+.button-orange-submit,
+.button-blue-submit {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        position: absolute;
+        right: setting(spacing, element-narrow);
+
+        width: $arrow-icon-size;
+        height: auto;
+    }
+
+    &:hover::after {
+        content: url('../assets/icomoon/SVG/arrow-right-white.svg');
+    }
+
+    .btn--submit {
+        text-align: left;
+        width: 100%;
+        padding: setting(spacing, element-narrow);
+        padding-right: setting(spacing, element-small);
+
+        @include media-query(desk) {
+            padding-right: setting(spacing, section-big);
+        }
+    }
+}
+
+.button-gray-submit {
+    position: relative;
+    display: inline-block;
+    margin-right: setting(spacing, element-narrow);
+
+    &::before {
+        $icon-top-position: 14px;
+
+        content: url('../assets/icomoon/SVG/arrow-left-black.svg');
+
+        top: $icon-top-position;
+
+        position: absolute;
+        left: setting(spacing, element-narrow);
+
+        width: $arrow-icon-size;
+        height: auto;
+    }
+
+    &:hover::before {
+        content: url('../assets/icomoon/SVG/arrow-left-white.svg');
+    }
+
+    .btn--back {
+        text-align: left;
+        width: 100%;
+        padding: setting(spacing, element-narrow);
+        padding-left: setting(spacing, element-small);
+
+        @include media-query(desk) {
+            padding-left: setting(spacing, section-big);
+        }
+    }
+}
+
+.button-orange-submit {
+    $icon-top-postion: 10px;
+
+    &::after {
+        content: url('../assets/icomoon/SVG/arrow-right-white.svg');
+
+        top: $icon-top-postion;
+    }
+}
+
+.button-blue-submit {
+    $icon-top-position: 13px;
+
+    &::after {
+        content: url('../assets/icomoon/SVG/arrow-right-black.svg');
+
+        top: $icon-top-position;
+    }
+}
+
+.btn--ghost,
+.btn--ghost-orange,
+.btn--ghost-gray {
+    background-color: transparent;
+    color: setting(color, black);
+    transition: setting(transition, default);
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.is-active {
+        transition: setting(transition, default);
+        color: setting(color, white);
+    }
+}
+
+.btn--ghost {
+    border: setting(border, ghost);
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.is-active {
+        background-color: setting(color, blue-ghost);
+    }
+}
+
+.btn--ghost-orange {
+    border: setting(border, ghost-orange);
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.is-active {
+        background-color: setting(color, orange-ghost);
+    }
+}
+
+.btn--ghost-gray {
+    border: setting(border, ghost-gray);
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.is-active {
+        background-color: setting(color, gray-ghost);
+    }
+}
+
+.btn--ghost.btn--submit::after {
+    color: setting(color, primary);
+
+    // stylelint-disable selector-max-specificity
+    &:hover {
+        color: setting(color, white);
+    }
+    // stylelint-enable
+}

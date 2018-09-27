@@ -1,0 +1,14 @@
+/*
+ * Merge all settings
+ */
+// stylelint-disable function-parentheses-space-inside
+$settings: map-collect(
+    $settings-color,
+    $settings-font,
+    $settings-border,
+    $settings-spacing,
+    $settings-z-index,
+    $settings-transition,
+    $settings-general
+);
+// stylelint-enable function-parentheses-space-inside

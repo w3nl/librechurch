@@ -1,0 +1,14 @@
+/*
+ * Transition settings
+ */
+$settings-transition: (
+
+    transition: (
+        default: all 0.3s ease-in-out,
+    ),
+
+    duration: (
+        default: 0.2s,
+    )
+
+);

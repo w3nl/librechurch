@@ -1,0 +1,14 @@
+a {
+    color: setting(color, link);
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: setting(color, link-highlight);
+    }
+
+    > object,
+    > svg {
+        pointer-events: none;
+    }
+}

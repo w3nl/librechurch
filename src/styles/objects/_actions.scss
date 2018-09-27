@@ -1,0 +1,45 @@
+.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include media-query (lap-and-up) {
+        justify-content: space-between;
+    }
+}
+
+.actions__forward,
+.actions__content,
+.actions__back {
+    display: block;
+    margin-bottom: setting(spacing, element);
+
+    flex-basis: 100%;
+
+    @include media-query (lap-and-up) {
+        flex-basis: auto;
+    }
+}
+
+.actions__content {
+    width: 100%;
+}
+
+@include media-query (lap-and-up) {
+    .actions__back { order: 1; }
+
+    .actions__content {
+        order: 2;
+        width: auto;
+    }
+    .actions__forward { order: 3; }
+}
+
+.actions--right {
+    justify-content: flex-end;
+}
+
+.actions--center {
+    justify-content: center;
+}

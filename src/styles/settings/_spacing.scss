@@ -1,0 +1,20 @@
+/*
+ * Spacing settings
+ */
+$settings-spacing: (
+
+    spacing: (
+        element: $b,
+        element-small: ($b * 1.5),
+        element-narrow: ($b / 2),
+        section: ($b * 2),
+        section-big: ($b * 4),
+        section-narrow: $b,
+        inline: ($b / 4),
+
+        button-tb: ($b / 2.5),
+        button-lr: ($b / 1.5),
+        input: ($b / 8),
+    )
+
+);

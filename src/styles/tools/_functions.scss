@@ -1,0 +1,31 @@
+@function map-get-deep($map, $keys...) {
+    $value: $map;
+    @each $key in $keys {
+        $value: map-get($value, $key);
+    }
+    @return $value;
+}
+
+@function setting($keys...) {
+    $value: $settings;
+
+    @each $key in $keys {
+        $value: map-get($value, $key);
+    }
+
+    @if not $value {
+        @error 'setting(#{$keys}) not found, check the settings file';
+    }
+
+    @return $value;
+}
+
+@function map-collect($maps...) {
+    $collection: ();
+
+    @each $map in $maps {
+        $collection: map-merge($collection, $map);
+    }
+
+    @return $collection;
+}

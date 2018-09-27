@@ -1,0 +1,144 @@
+//
+// #SETTINGS
+//
+// Default settings:
+// https://github.com/inuitcss/settings.defaults/blob/master/_settings.defaults.scss
+//
+$inuit-base-font-size: 18px;
+$inuit-base-line-height: 30px;
+
+@import '../../node_modules/inuit-defaults/settings.defaults';
+$b: ($inuit-base-line-height / $inuit-base-font-size) * 1rem;
+
+$inuit-responsive-settings: true;
+@import '../../node_modules/inuit-responsive-settings/settings.responsive';
+
+// Add a custom inuit breakpoint: desk-large
+$breakpoints: (
+    'palm'          'screen and (max-width: 44.9375em)',
+    'lap'           'screen and (min-width: 45em) and (max-width: 63.9375em)',
+    'lap-and-up'    'screen and (min-width: 45em)',
+    'portable'      'screen and (max-width: 63.9375em)',
+    'desk'          'screen and (min-width: 64em)',
+    'desk-large'    'screen and (min-width: 85.4375em)',
+    'retina'        '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)'
+);
+
+//
+// #TOOLS
+//
+@import '../../node_modules/inuit-functions/tools.functions';
+@import '../../node_modules/inuit-mixins/tools.mixins';
+@import '../../node_modules/inuit-responsive-tools/tools.responsive';
+@import '../../node_modules/inuit-tools-widths/tools.widths';
+
+@import 'tools/functions';
+@import 'tools/str-replace';
+@import 'tools/svg';
+
+//
+// #SETTINGS
+//
+@import 'settings/private';
+@import 'settings/colors';
+@import 'settings/font';
+@import 'settings/spacing';
+@import 'settings/border';
+@import 'settings/z-index';
+@import 'settings/general';
+@import 'settings/transitions';
+@import 'settings/settings';
+
+//
+// #MIXINS
+//
+@import 'mixins/font';
+@import 'mixins/headings';
+@import 'mixins/utilities';
+@import 'mixins/aspect-ratio';
+
+
+//
+// #GENERIC
+//
+@import '../../node_modules/normalize.css/normalize';
+@import '../../node_modules/inuit-reset/generic.reset';
+@import '../../node_modules/inuit-box-sizing/generic.box-sizing';
+
+
+//
+// #BASE
+//
+$inuit-base-background-color: #eee;
+$inuit-base-text-color: setting(color, black);
+
+@import '../../node_modules/inuit-page/base.page';
+@import '../../node_modules/inuit-images/base.images';
+
+@import 'generic/page';
+@import 'generic/headings';
+@import 'generic/links';
+@import 'generic/list';
+@import 'generic/table';
+
+
+//
+// #EXTERNAL
+//
+
+
+//
+// #OBJECTS
+//
+$inuit-enable-layout--center: true;
+@import '../../node_modules/inuit-layout/objects.layout';
+@import '../../node_modules/inuit-buttons/objects.buttons';
+
+@import 'objects/section';
+@import 'objects/container';
+@import 'objects/embed';
+@import 'objects/content';
+@import 'objects/actions';
+@import 'objects/fields';
+@import 'objects/cover';
+@import 'objects/button';
+
+
+//
+// #COMPONENTS
+//
+@import 'components/app';
+@import 'components/button';
+@import 'components/navbar';
+@import 'components/wizard';
+@import 'components/domains';
+
+//
+// #TRUMPS
+//
+@import '../../node_modules/inuit-widths/trumps.widths';
+@import '../../node_modules/inuit-print/trumps.print';
+
+$inuit-widths-columns-responsive: (
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+);
+@import '../../node_modules/inuit-responsive-widths/trumps.widths-responsive';
+
+@import '../../node_modules/inuit-spacing/trumps.spacing';
+@import '../../node_modules/inuit-clearfix/trumps.clearfix';
+@import '../../node_modules/inuit-responsive-spacing/trumps.spacing-responsive';
+
+@import 'utilities/utilities';
+@import 'utilities/position';
+@import 'utilities/display';

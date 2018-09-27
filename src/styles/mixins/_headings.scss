@@ -1,0 +1,31 @@
+@mixin heading {
+    @include font(heading);
+    margin-bottom: $b;
+}
+
+@mixin alpha {
+    @include heading;
+    @include inuit-font-size(setting(font-size, h1));
+
+    @include media-query(lap-and-up) {
+        @include inuit-font-size(setting(font-size-lap-and-up, h1));
+    }
+}
+
+@mixin beta {
+    @include heading;
+    @include inuit-font-size(setting(font-size, h2));
+
+    @include media-query(lap-and-up) {
+        @include inuit-font-size(setting(font-size-lap-and-up, h2));
+    }
+}
+
+@mixin gamma {
+    @include heading;
+    @include inuit-font-size(setting(font-size, h3));
+
+    @include media-query(lap-and-up) {
+        @include inuit-font-size(setting(font-size-lap-and-up, h3));
+    }
+}

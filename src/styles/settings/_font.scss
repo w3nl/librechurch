@@ -1,0 +1,39 @@
+/*
+ * Font settings
+ */
+$settings-font: (
+
+    font-size: (
+        default: $inuit-base-font-size,
+        lede: 17px,
+        smaller: 16px,
+
+        h1: 23px,
+        h2: 21px,
+        h3: 18px,
+
+        button: 14px,
+    ),
+
+    font-size-lap-and-up: (
+        h1: 40px,
+        h2: 26px,
+        h3: 18px,
+    ),
+
+    font-weight: (
+        light: 300,
+        normal: 400,
+        medium: 500,
+        bold: 700,
+
+        button: 600
+    ),
+
+    letter-spacing: (),
+
+    line-height: (
+        button: 1.4
+    )
+
+);

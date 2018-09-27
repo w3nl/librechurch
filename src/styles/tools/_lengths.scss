@@ -1,0 +1,58 @@
+/*
+ * Default font-size of browsers
+ */
+$length-default-browser-size: 16;
+
+/*
+ * Calculate rem from pixels
+ * from: http://www.stubbornella.org/content/2013/07/01/easy-peasy-rem-conversion-with-sass/
+ */
+@function rem($pixels, $context: '') {
+    @if ($context == '') {
+        $context: $length-default-browser-size; // default browser size
+    }
+
+    @return $pixels / $context * 1rem;
+}
+
+/*
+ * Calculate em from pixels
+ * from: https://css-tricks.com/snippets/sass/px-to-em-functions/
+ */
+@function em($pixels, $context: '') {
+    @if ($context == '') {
+        $context: $length-default-browser-size; // default browser size
+    }
+
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+
+    @if (unitless($context)) {
+        $context: $context * 1px;
+    }
+
+    @return $pixels / $context * 1em;
+}
+
+/*
+ * Calculate pixels from rem
+ */
+@function px($rem) {
+    @return strip-unit($rem) * strip-unit(setting(font-size, default)) * 1px;
+}
+
+
+/*
+ * Remove the unit of a length
+ * @param {Number} $number - Number to remove unit from
+ * @return {Number} - Unitless number
+ * from: https://css-tricks.com/snippets/sass/strip-unit-function/
+ */
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}

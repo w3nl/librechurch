@@ -1,0 +1,90 @@
+.fields {
+    border: 0;
+    margin-bottom: setting(spacing, element-narrow);
+}
+
+.field__label--sr-only {
+    @include sr-only;
+}
+
+.field__label--search {
+    font-weight: setting(font-weight, bold);
+    font-size: setting(font-size, h1);
+
+    color: setting(color, black-light);
+}
+
+.field__search-link {
+    width: 100%;
+    margin-top: setting(spacing, element-narrow);
+
+    @include media-query(desk) {
+        margin-top: 0;
+        width: auto;
+    }
+}
+
+.field__input,
+.field__message {
+    width: 100%;
+    margin-bottom: setting(spacing, element-narrow);
+    border-radius: setting(border-radius, input);
+    border: setting(border, input);
+    padding: setting(spacing, input) setting(spacing, element-narrow);
+    color: setting(color, black-light);
+
+    &--flush {
+        margin-bottom: 0;
+    }
+}
+
+.field__input--search {
+    padding: setting(spacing, inline) setting(spacing, element-narrow);
+    margin-top: setting(spacing, element);
+    margin-bottom: 0;
+    margin-right: 0;
+    border-radius: setting(border-radius, search);
+    font-weight: setting(font-weight, bold);
+
+    &:focus {
+        background-color: setting(color, yellow);
+    }
+
+    &::placeholder {
+        font-weight: setting(font-weight, light);
+    }
+
+    @include media-query(desk) {
+        margin-right: setting(spacing, element-narrow);
+    }
+}
+
+.field__input::placeholder {
+    color: setting(color, gray);
+}
+
+/* Varations */
+.field--inline {
+    .field__label,
+    .field__input {
+        vertical-align: middle;
+        display: inline-block;
+        width: auto;
+        margin-bottom: setting(spacing, element-narrow);
+    }
+}
+
+.field--row {
+    width: 100%;
+
+    .field__label,
+    .field__input {
+        display: block;
+        float: left;
+        margin-bottom: setting(spacing, element-narrow);
+    }
+
+    .field__input {
+        float: right;
+    }
+}

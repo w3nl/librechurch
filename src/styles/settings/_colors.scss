@@ -1,0 +1,46 @@
+/*
+ * Color settings
+ */
+$settings-color: (
+
+    color: (
+        primary: $_primary,
+
+        gray-lightest: $_gray-lighter,
+        gray-light: $_gray-light,
+        gray: $_gray,
+
+        white: $_white,
+        black: $_black,
+        black-light: #4a4a4a,
+        blue: #365287,
+        yellow: #fefad2,
+
+        blue-ghost: #14bae9,
+        orange-ghost: #f56a19,
+        gray-ghost: $_gray,
+
+        link: #5b88e1,
+        link-highlight: $_black,
+
+        meter-blue: #47b6e7,
+        meter-gray: #d8d8d8,
+        meter-gray-light: #adadad,
+
+        sidebar-background: #f7f7f7,
+        sidebar-color: $_black,
+        sidebar-hover: #1fa7e0,
+        sidebar-divider: rgba(0, 0, 0, 0.05),
+
+        app-background: $_white,
+        orange-gradient: linear-gradient(to bottom, #ffb600 0%, #f60 50%, #f60 51%, #e35b00 100%),
+    ),
+
+    state: (
+        error-color: #fa4659,
+        error-border-color: #fa4659,
+        success-color: #1bcca6,
+        success-border-color: #1bcca6,
+    )
+
+);

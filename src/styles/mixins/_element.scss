@@ -1,0 +1,14 @@
+@mixin element ($variation: false) {
+    $possible: narrow;
+    $spacing: setting(spacing, element);
+
+    @if $variation and not index($possible, $variation) {
+        @warn 'D’oh! ‘#{$variation}’ is not a valid value for the element mixin. Please try again.';
+    }
+
+    @if $variation == narrow {
+        $spacing: setting(spacing, element-narrow);
+    }
+
+    margin-bottom: $spacing;
+}
