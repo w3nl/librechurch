@@ -3,18 +3,16 @@
         <div class="u-margin-bottom"></div>
         <div class="layout layout--center">
             <div class="layout__item u-3/5-desk-large">
-                <div class="wizard__footer">
-                    <div
-                        v-for="(product, index) in products"
-                        :key="index"
-                    >
-                        <div v-if="product.serviceitem">
-                            <router-link :to="{ name: 'service.detail', params: { serviceId: index } }">
-                                {{ product.serviceitem.header.title }}
-                            </router-link>
-                        </div>
-                    </div>
-                </div>
+                <ul
+                    v-for="(product, index) in products"
+                    :key="index"
+                >
+                    <li v-if="product.serviceitem">
+                        <router-link :to="{ name: 'service.detail', params: { serviceId: index } }">
+                            {{ product.serviceitem.header.title }}
+                        </router-link>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
