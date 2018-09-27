@@ -15,20 +15,6 @@
                     </div>
 
                     <span role="separator" class="divider | u-margin-top-auto"></span>
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <router-link :to="{ name: 'home' }">
-                                Styleguide
-                            </router-link>
-                        </li>
-                        <span class="u-separated-line"></span>
-                        <li>
-                            <router-link :to="{ name: 'home' }">
-                                Domein registreren
-                            </router-link>
-                        </li>
-                        <span class="u-separated-line"></span>
-                    </ul>
                 </div>
 
                 <main class="app-main">
