@@ -40,7 +40,7 @@
                         class="button-blue-submit"
                     >
                         <router-link :to="{ name: 'service.detail', params: { serviceId: serviceId + 1 } }">
-                            <button type="button" class="btn btn--ghost btn--submit btn--nav">next</button>
+                            <button type="button" class="btn btn--ghost btn--submit">next</button>
                         </router-link>
                     </div>
                 </div>
