@@ -3,7 +3,7 @@
         <div class="u-margin-bottom"></div>
         <div class="layout layout--center">
             <div class="layout__item u-3/5-desk-large">
-                <div class="wizard__footer">
+                <div class="product">
                     <div v-if="product.serviceitem">
                         <h1>{{ product.serviceitem.header.title }}</h1>
                         <div
@@ -11,8 +11,37 @@
                             :key="index"
                         >
                             <h2>{{ data.title }}</h2>
-                            {{ data.raw_slide }}
+                            <p
+                                v-if="data.raw_slide && product.serviceitem.header.plugin == 'songs'"
+                                class="note__pre"
+                            >{{ data.raw_slide }}</p>
+                            <p
+                                v-if="data.raw_slide && product.serviceitem.header.plugin == 'custom'"
+                                class="note__pre"
+                            >{{ data.raw_slide }}</p>
+                            <img
+                                v-if="product.serviceitem.header.plugin == 'images'"
+                                :src="'/img/' + data"
+                            />
                         </div>
+                    </div>
+                </div>
+                    <div class="wizard__footer">
+                    <div
+                        v-if="serviceId > 1"
+                        class="button-gray-submit"
+                    >
+                        <router-link :to="{ name: 'service.detail', params: { serviceId: serviceId - 1 } }">
+                            <button type="button" class="btn btn--ghost-gray btn--back">previous</button>
+                        </router-link>
+                    </div>
+                    <div
+                        v-if="serviceId + 1 < products.length"
+                        class="button-blue-submit"
+                    >
+                        <router-link :to="{ name: 'service.detail', params: { serviceId: serviceId + 1 } }">
+                            <button type="button" class="btn btn--ghost btn--submit btn--nav">next</button>
+                        </router-link>
                     </div>
                 </div>
             </div>

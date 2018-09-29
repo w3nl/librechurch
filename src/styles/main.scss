@@ -142,3 +142,9 @@ $inuit-widths-columns-responsive: (
 @import 'utilities/utilities';
 @import 'utilities/position';
 @import 'utilities/display';
+
+.note__pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: inherit;
+}
