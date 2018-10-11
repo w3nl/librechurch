@@ -9,9 +9,9 @@
             <div class="app">
                 <div role="presentation" class="app-navbar | navbar navbar-sidebar | u-display--none-portable">
                     <div class="navbar-header">
-                        <a href="#" class="navbar-brand">
+                        <router-link :to="{ name: 'home' }" class="navbar-brand">
                             <img alt="Vue logo" src="./assets/logo.png" id="logo" class="logo">
-                        </a>
+                        </router-link>
                     </div>
 
                     <span role="separator" class="divider | u-margin-top-auto"></span>

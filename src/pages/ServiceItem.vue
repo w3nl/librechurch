@@ -2,7 +2,10 @@
     <div>
         <div class="u-margin-bottom"></div>
         <div class="layout layout--center">
-            <div class="layout__item u-3/5-desk-large">
+            <div 
+                v-if="product"
+                class="layout__item u-3/5-desk-large"
+            >
                 <div class="product">
                     <div v-if="product.serviceitem">
                         <h1>{{ product.serviceitem.header.title }}</h1>
@@ -26,7 +29,7 @@
                         </div>
                     </div>
                 </div>
-                    <div class="wizard__footer">
+                <div class="wizard__footer">
                     <div
                         v-if="serviceId > 1"
                         class="button-gray-submit"
