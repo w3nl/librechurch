@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
-    "es6-promise": "^4.2.6",
+    "es6-promise": "^4.2.8",
     "inuit-box-sizing": "0.2.0",
     "inuit-buttons": "0.4.2",
     "inuit-clearfix": "0.2.2",
@@ -54,7 +54,7 @@
     "@vue/eslint-config-prettier": "^4.0.1",
     "@vue/test-utils": "^1.0.0-beta.29",
     "chai": "^4.2.0",
-    "lint-staged": "^8.1.7",
+    "lint-staged": "^8.2.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.0.1",
     "vue-template-compiler": "^2.6.10"
